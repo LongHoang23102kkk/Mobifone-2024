@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+            background-image: url("https://i.postimg.cc/4yRXzpjS/BACK-GAME-16-9-DONG-NAI.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .logo {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .logo img {
+            max-width: 40%;
+            height: auto;
+        }
+
+        .program-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .program-images img {
+            max-width: 60%;
+            display: none;
+        }
+
+        .introduction-text {
+            text-align: center;
+            padding: 0px 15%;
+            margin: 20px;
+            color: white;
+            line-height: 1.5;
+            font-size: 20px;
+        }
+
+        .arrow-button {
+            margin: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 5%;
+        }
+
+        .arrow-button a {
+            text-decoration: none;
+            font-size: 20px;
+            background-color: #0055BA;
+            color: #ffffff;
+            padding: 15px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .arrow-button a:hover {
+            opacity: 0.8;
+        }
+
+        .text-bold {
+            font-weight: bold;
+            color: yellow;
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                margin-bottom: 50%;
+            }
+
+            .program-images img.desktop {
+                display: none;
+            }
+
+            .program-images img.mobile {
+                display: block;
+                width: 100%;
+            }
+
+            .logo {
+                margin-top: 50px;
+            }
+
+            .logo img {
+                max-width: 60%;
+            }
+
+            .program-image {
+                margin-top: 10px;
+            }
+
+            .program-image img {
+                max-width: 100%;
+            }
+
+            .introduction-text {
+                text-align: center;
+                padding: 0px 5%;
+                margin: 20px;
+                color: white;
+                line-height: 2;
+                font-size: 18px;
+            }
+
+            .arrow-button a {
+                text-decoration: none;
+                font-size: 16px;
+                background-color: #0055BA;
+                color: #ffffff;
+                padding: 10px 20px;
+                margin: 5px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+
+            .arrow-button a:hover {
+                opacity: 0.8;
+            }
+        }
+
+        /* Media query for screens larger than 600 pixels */
+        @media screen and (min-width: 601px) {
+            .program-images img.desktop {
+                display: block;
+                width: 80%;
+            }
+
+            .program-images img.mobile {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logo">
+        <img src="https://i.postimg.cc/K8fw5K9N/logo.png" alt="Logo">
+    </div>
+
+    <div class="program-images">
+        <img class="desktop" src="https://i.postimg.cc/ZqsKQqdd/text-GAME-2.png" alt="Desktop Image">
+        <img class="mobile" src="https://i.postimg.cc/0NrWdVKk/text-mobile.png" alt="Mobile Image">
+    </div>
+
+    <div class="introduction-text">
+        <p>Chúng ta đang cùng MobiFone bước vào một kỉ nguyên “Trải nghiệm khách hàng” với sứ mệnh chủ
+            động nắm bắt và phục vụ toàn bộ yêu cầu của mỗi khách hàng trong thời đại số. Chính các anh chị, những người
+            mang trong mình giá trị của MobiFone <span class="text-bold">“Thần tốc – Hiệu quả - Đổi mới – Chuyên
+                nghiệp”</span> sẽ là
+            những
+            đại sứ mang
+            đến muôn vàn trải nghiệm thú vị cho hàng triệu khách hàng.
+        </p>
+    </div>
+
+    <div class="arrow-button">
+        <a href="select-character.html">Tiếp tục hành trình...</a>
+    </div>
+
+</body>
+
+</html>

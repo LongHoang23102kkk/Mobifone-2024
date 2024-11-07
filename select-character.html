@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+            background-image: url("https://i.postimg.cc/4yRXzpjS/BACK-GAME-16-9-DONG-NAI.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .logo {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .logo img {
+            max-width: 40%;
+            height: auto;
+        }
+
+        .program-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .program-images img {
+            max-width: 60%;
+            display: none;
+        }
+
+        .introduction-text {
+            text-align: center;
+            padding: 0px 15%;
+            margin: 20px;
+            color: white;
+            line-height: 1.5;
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
+
+        .arrow-button {
+            margin: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 5%;
+        }
+
+        .arrow-button a {
+            text-decoration: none;
+            font-size: 20px;
+            background-color: #0055BA;
+            color: #ffffff;
+            padding: 15px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .arrow-button a:hover {
+            opacity: 0.8;
+        }
+
+        .character-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5%;
+
+        }
+
+        .character {
+            background-color: #fff;
+            margin: 0 2%;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            border-radius: 10px;
+            text-decoration: none;
+            flex-basis: 10%;
+        }
+
+        .character img {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+
+        .character-text {
+            margin-top: 10px;
+            font-weight: bold;
+            display: block;
+            color: inherit;
+        }
+
+        .text-bold {
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 600px) {
+            .program-images img.desktop {
+                display: none;
+            }
+
+            .program-images img.mobile {
+                display: block;
+                width: 100%;
+            }
+
+            .logo {
+                margin-top: 50px;
+            }
+
+            .logo img {
+                max-width: 60%;
+            }
+
+            .program-images {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-bottom: 30px;
+            }
+
+            .program-images img {
+                max-width: 100%;
+                display: none;
+            }
+
+            .introduction-text {
+                text-align: center;
+                padding: 0px 5%;
+                margin: 20px;
+                color: white;
+                line-height: 2;
+                font-size: 18px;
+            }
+
+            .arrow-button a {
+                text-decoration: none;
+                font-size: 16px;
+                background-color: #0055BA;
+                color: #ffffff;
+                padding: 10px 20px;
+                margin: 5px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+
+            .arrow-button a:hover {
+                opacity: 0.8;
+            }
+
+            .character-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 5%;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .character {
+                background-color: #fff;
+                margin: 0 2%;
+                padding: 20px;
+                text-align: center;
+                transition: transform 0.3s ease-in-out;
+                border-radius: 10px;
+                text-decoration: none;
+                flex-basis: 30%;
+                margin-bottom: 5%;
+            }
+
+
+            .character img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Media query for screens larger than 600 pixels */
+        @media screen and (min-width: 601px) {
+            .character:hover {
+                transform: scale(1.1);
+            }
+
+            .program-images img.desktop {
+                display: block;
+                width: 80%;
+            }
+
+            .program-images img.mobile {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logo">
+        <img src="asset/img/logo.png" alt="Logo">
+    </div>
+
+    <div class="program-images">
+        <img class="desktop" src="asset/img/text-GAME-2.png" alt="Desktop Image">
+        <img class="mobile" src="asset/img/text-mobile.png" alt="Mobile Image">
+    </div>
+
+    <div class="introduction-text">
+        <p>Hãy lựa chọn nhân vật đại diện cho đội của mình và cùng chúng tôi bước vào cuộc phiêu lưu này nhé!</p>
+    </div>
+
+    <div class="character-container">
+        <a href="than-toc/than-toc.html" class="character">
+            <img src="asset/img/THAN-TOC.png" alt="THẦN TỐC" target="_self">
+            <div class="character-text text-bold">THẦN TỐC</div>
+        </a>
+
+        <a href="https://game.nangtamtrainghiem.com/hieu-qua" class="character">
+            <img src="asset/img/HIEU-QUA.png" alt="HIỆU QUẢ" target="_self">
+            <div class="character-text text-bold">HIỆU QUẢ</div>
+        </a>
+
+        <a href="https://game.nangtamtrainghiem.com/doi-moi" class="character">
+            <img src="asset/img/DOI-MOI.png" alt="ĐỔI MỚI" target="_self">
+            <div class="character-text text-bold">ĐỔI MỚI</div>
+        </a>
+
+        <a href="https://game.nangtamtrainghiem.com/chuyen-nghiep" class="character">
+            <img src="asset/img/CHUYEN-NGHIEP.png" alt="CHUYÊN NGHIỆP" target="_self">
+            <div class="character-text text-bold">CHUYÊN NGHIỆP</div>
+        </a>
+    </div>
+
+</body>
+
+</html>

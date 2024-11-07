@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-image: url("https://i.postimg.cc/4yRXzpjS/BACK-GAME-16-9-DONG-NAI.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            background-size: cover;
+            font-size: 24px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #ededed;
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        button {
+            border: 1px solid black;
+            border-radius: 3%;
+        }
+
+        #wrapper {
+            max-width: 1080px;
+            margin: 0px auto;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin-top: 3%;
+        }
+
+        .container {
+
+            display: flex;
+        }
+
+        .content {
+            margin-top: 15%;
+            padding: 0 30px;
+        }
+
+        .image {
+            flex-basis: 100%;
+            margin-right: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        #message {
+            color: yellow;
+            font-weight: 600;
+        }
+
+        #password {
+            padding: 10px 20px;
+            font-size: 21px;
+        }
+
+        #submitBtn {
+            padding: 7px 19px;
+            font-size: 21px;
+            color: #0056b3;
+            cursor: pointer;
+        }
+
+        #textbox {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #textbox h3 {
+            color: #333;
+        }
+
+        #textbox a {
+            color: yellow;
+            position: absolute;
+            right: 20px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            z-index: 2;
+            font-size: 20px;
+        }
+
+        #popup button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        #popup button:hover {
+            background-color: #0056b3;
+        }
+
+        .text-red {
+            color: yellow;
+            font-weight: 600;
+        }
+
+        .text-while {
+            color: white;
+        }
+
+        img {
+            max-width: 100%;
+            padding: 5px;
+            height: auto;
+            border-radius: 2%;
+            margin-top: 20px;
+        }
+
+        p {
+            color: white;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .p-10 {
+            padding: 0 10%
+        }
+
+        .underline {
+            border-bottom: 5px solid whitesmoke;
+            margin: 0 auto;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+
+        .next {
+            padding-bottom: 30px;
+        }
+    </style>
+    <style>
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+                padding: 0px 30px;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+                margin-left: 5px;
+            }
+
+            h1 {
+                font-size: 24px;
+
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            #popup {
+                width: 80%;
+                max-width: 300px;
+                font-size: 18px;
+                padding: 20px;
+                text-align: center;
+            }
+
+            #popup button {
+                background-color: #007BFF;
+                color: #fff;
+                border: none;
+                margin-top: 15px;
+                padding: 10px 30px;
+                border-radius: 5px;
+                font-size: 18px;
+            }
+
+            #wrapper {
+                padding-top: 10%;
+                padding-bottom: 20%;
+            }
+
+            .container {
+                display: block;
+                text-align: left;
+            }
+
+            .content {
+                margin: 0;
+            }
+
+            #submitBtn {
+                padding: 10px 25px;
+                font-size: 18px;
+                color: #0056b3;
+                border-radius: 30px;
+                margin-left: 20%;
+            }
+
+            .pass {
+                width: 100%;
+                height: auto;
+            }
+
+            #password {
+                font-size: 16px;
+            }
+
+            #textbox a {
+                color: white;
+            }
+        }
+    </style>
+    <script>
+        var remainingAttempts = 5; // Số lần còn lại để mở khóa
+        var passwords = ["73921"]; // Mảng các chuỗi mật khẩu
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+
+            if (passwords.includes(password)) {
+                // Hiển thị thông báo nếu mật khẩu đúng
+                showPopup("<h3>Mật khẩu chính xác!!</h3></br> Xin mời bạn đến trạm CỬA HÀNG.");
+                document.getElementById("message").innerHTML = "";
+                document.getElementById("textbox").style.display = "block";
+            } else {
+                remainingAttempts--
+                // Hiển thị thông báo nếu mật khẩu sai
+                showPopup("<h3>Rất tiếc!</h3></br> Mật khẩu sai</br> Xin hãy đi lấy mật khẩu của đội bạn nhé!");
+                document.getElementById("message").innerHTML = "Số cơ hội trả lời còn lại: " + remainingAttempts;
+                if (remainingAttempts === 0) {
+                    document.getElementById("password").disabled = true;
+                    document.getElementById("submitBtn").disabled = true;
+                    document.getElementById("message").innerHTML = "ĐÃ HẾT SỐ LẦN MỞ KHÓA, HÃY F5 TRÌNH DUYỆT ĐỂ CHƠI LẠI TỪ ĐẦU";
+                }
+            }
+        }
+        function showPopup(message) {
+            // Hiển thị overlay
+            document.getElementById("overlay").style.display = "block";
+            // Hiển thị thông báo
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+            popup.innerHTML = message;
+            // Thêm dòng mới trước nút "OK"
+            var lineBreak = document.createElement("br");
+            popup.appendChild(lineBreak);
+            // Thêm nút OK để đóng thông báo
+            var closeButton = document.createElement("button");
+            closeButton.innerHTML = "OK";
+            closeButton.addEventListener("click", function () {
+                // Ẩn overlay và thông báo khi người dùng nhấp OK
+                document.getElementById("overlay").style.display = "none";
+                popup.style.display = "none";
+            });
+            popup.appendChild(closeButton);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <div class="image">
+                <img src="/asset/img/THAN-TOC.png" alt="">
+            </div>
+            <div class="content">
+                <p class="text-left">Bạn là biểu tượng của tốc độ và sự linh hoạt, bạn là người cung cấp dịch vụ nhanh
+                    chóng và hiệu quả, đáp ứng ngay lập tức các nhu cầu của khách hàng.
+                </p>
+                <h2>Nhập mật khẩu để bắt đầu hành trình...</h2>
+                <p id="message"></p>
+                <input class="pass" type="text" id="password" placeholder="Nhập câu trả lời của bạn...">
+                <br><br>
+                <button type="button" id="submitBtn" onclick="checkPassword()">Xác nhận</button>
+                <br><br>
+                <!-- Overlay và thông báo -->
+                <div id="overlay"></div>
+                <div id="popup"></div>
+                <div id="textbox">
+                    <p class="next"><a href="game-1-tt.html">Tiếp tục hành trình
+                            &#10140</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
