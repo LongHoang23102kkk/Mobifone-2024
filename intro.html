@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+            background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-main.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .logo {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .logo img {
+            max-width: 40%;
+            height: auto;
+        }
+
+        .program-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .program-images img {
+            max-width: 60%;
+            display: none;
+        }
+
+        .introduction-text {
+            text-align: center;
+            padding: 0px 15%;
+            margin: 20px;
+            color: white;
+            line-height: 1.5;
+            font-size: 20px;
+        }
+
+        .arrow-button {
+            margin: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 5%;
+        }
+
+        .arrow-button a {
+            text-decoration: none;
+            font-size: 20px;
+            background-color: #0055BA;
+            color: #ffffff;
+            padding: 15px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .arrow-button a:hover {
+            opacity: 0.8;
+        }
+
+        .text-bold {
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                margin-bottom: 50%;
+            }
+
+            .program-images img.desktop {
+                display: none;
+            }
+
+            .program-images img.mobile {
+                display: block;
+                width: 100%;
+            }
+
+            .logo {
+                margin-top: 50px;
+            }
+
+            .logo img {
+                max-width: 60%;
+            }
+
+            .program-image {
+                margin-top: 10px;
+            }
+
+            .program-image img {
+                max-width: 100%;
+            }
+
+            .introduction-text {
+                text-align: center;
+                padding: 0px 5%;
+                margin: 20px;
+                color: white;
+                line-height: 2;
+                font-size: 18px;
+            }
+
+            .arrow-button a {
+                text-decoration: none;
+                font-size: 16px;
+                background-color: #0055BA;
+                color: #ffffff;
+                padding: 10px 20px;
+                margin: 5px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+
+            .arrow-button a:hover {
+                opacity: 0.8;
+            }
+        }
+
+        /* Media query for screens larger than 600 pixels */
+        @media screen and (min-width: 601px) {
+            .program-images img.desktop {
+                display: block;
+                width: 80%;
+            }
+
+            .program-images img.mobile {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logo">
+        <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/logo1.png" alt="Logo">
+    </div>
+
+    <div class="program-images">
+        <img class="desktop" src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/text-ngang.png"
+            alt="Desktop Image">
+        <img class="mobile" src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/text-ngang.png"
+            alt="Mobile Image">
+    </div>
+
+    <div class="introduction-text">
+        <p class="text-bold">Đất – Nước – Lửa – Khí là những nguyên tố cơ bản hình thành
+            nên sự sống và mọi chuyển động trên hành tinh của chúng
+            ta, cũng như Thần Tốc – Đổi Mới – Chuyên Nghiệp – Hiệu Quả
+            là 4 giá trị cốt lõi làm nên hình ảnh con người MobiFone
+            hướng tới mục tiêu phát triển bền vững. Đến với “Hội ngộ
+            anh tài – x2 trải nghiệm”
+            , các “anh tài MobiFone" sẽ cùng
+            nhau đầu quân cho các “nhà” - đại diện cho các giá trị cốt lõi
+            - chung sức vượt thử thách để hoàn thiện bức tranh hành
+            trình trải nghiệm khách hàng, cũng là để hoàn thiện trải
+            nghiệm của bản thân trên hành trình vươn tới tương lai.
+            Chúc các “anh tài” sẽ có thật nhiều trải nghiệm đẹp cùng
+            ngày hội cám ơn nhân viên hỗ trợ khách hàng 2024 và gặt
+            hái thật nhiều giải thưởng giá trị của chương trình nhé!
+        </p>
+    </div>
+
+    <div class="arrow-button">
+        <a href="https://games.x2trainghiem.com/select-character/">Tiếp tục hành trình...</a>
+    </div>
+
+</body>
+
+</html>

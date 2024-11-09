@@ -1,0 +1,398 @@
+<!-- wp:code -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-than-toc.jpg"); */
+            /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-hieu-qua.jpg"); */
+            background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-doi-moi.jpg");
+            /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-chuyen-nghiep.jpg"); */
+
+            text-align: center;
+            background-size: cover;
+            font-size: 20px;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+
+        .logo {
+            width: 400px;
+        }
+
+        h1 {
+            margin: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: floralwhite;
+            font-weight: bold;
+        }
+
+        h3 {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        button {
+            border: 1px solid black;
+            border-radius: 3%;
+        }
+
+        #wrapper {
+            max-width: 1080px;
+            margin: 0px auto;
+            padding-bottom: 50px;
+        }
+
+        .container {
+
+            display: flex;
+        }
+
+        .content {
+            margin-top: 5%;
+            padding: 0 30px;
+        }
+
+        .image {
+            flex-basis: 90%;
+            margin-right: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        #message {
+            color: yellow;
+            font-weight: bold;
+        }
+
+        #password {
+            padding: 13px 20px;
+            font-size: 24px;
+        }
+
+        #submitBtn {
+            padding: 10px 25px;
+            font-size: 24px;
+            color: #0056b3;
+            background-color: yellow;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #textbox {
+            margin-top: 20px;
+            display: none;
+            position: relative;
+        }
+
+        #textbox h3 {
+            color: #333;
+        }
+
+        #textbox a {
+            /* color: yellow; */
+            text-decoration: none;
+            right: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            z-index: 2;
+            font-size: 20px;
+        }
+
+        #popup button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        #popup button:hover {
+            background-color: #0056b3;
+        }
+
+        .text-red {
+            color: yellow;
+            font-weight: 600;
+        }
+
+        .text-while {
+            color: white;
+        }
+
+        img {
+            max-width: 100%;
+            padding: 5px;
+            height: auto;
+            border-radius: 2%;
+            margin-top: 20px;
+        }
+
+        p {
+            color: white;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .p-10 {
+            padding: 0 10%
+        }
+
+        .underline {
+            border-bottom: 5px solid whitesmoke;
+            margin: 0 auto;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+
+        .next {
+            padding-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .title {
+            font-size: 23px;
+            color: yellow;
+            font-weight: bold;
+        }
+
+        #result-link {
+            display: block;
+            bottom: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: #fff;
+        }
+    </style>
+    <style>
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+                padding: 0px 30px;
+                /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-than-toc-mb.jpg"); */
+                /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-hieu-qua-mb.jpg"); */
+                background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-doi-moi-mb.jpg");
+                /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-chuyen-nghiep-mb.jpg"); */
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+                margin-left: 5px;
+            }
+
+            h1 {
+                font-size: 24px;
+
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            #popup {
+                width: 80%;
+                max-width: 300px;
+                font-size: 18px;
+                padding: 20px;
+            }
+
+            #popup button {
+                background-color: #007BFF;
+                color: #fff;
+                border: none;
+                margin-top: 15px;
+                padding: 10px 30px;
+                border-radius: 5px;
+                font-size: 18px;
+            }
+
+            #wrapper {
+                padding-top: 10%;
+                padding-bottom: 20%;
+            }
+
+            .container {
+                display: block;
+                text-align: left;
+            }
+
+            .content {
+                margin: 0;
+            }
+
+            #submitBtn {
+                padding: 10px 25px;
+                font-size: 18px;
+                color: #0056b3;
+                border-radius: 30px;
+            }
+
+            .pass {
+                width: 70%;
+                height: auto;
+            }
+
+            #password {
+                font-size: 16px;
+                border-radius: 5px;
+            }
+
+            .underline {
+                border-bottom: 3px solid whitesmoke;
+                margin: 0 auto;
+                width: 50%;
+                margin-bottom: 20px;
+            }
+
+            #textbox a {
+                margin-top: 30px;
+                color: white;
+            }
+
+            .logo {
+                width: 250px;
+                display: block;
+                margin: 0 auto;
+            }
+
+            #result-link {
+                bottom: 20px;
+                right: 20px;
+                padding: 8px 16px;
+                background-color: #4caf50;
+                color: #fff;
+            }
+
+        }
+    </style>
+    <script>
+        var remainingAttempts = 5; // Số lần còn lại để mở khóa
+        var passwords = ["8392"]; // Mảng các chuỗi mật khẩu
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+
+            if (passwords.includes(password)) {
+                // Hiển thị thông báo nếu mật khẩu đúng
+                showPopup("<h3>Xin chúc mừng </h3></br> mật khẩu chính xác!<br> Nhấn nút 'tiếp tục hành trình' để trả lời câu hỏi");
+                document.getElementById("message").innerHTML = "";
+                document.getElementById("textbox").style.display = "block";
+            } else {
+                remainingAttempts--
+                // Hiển thị thông báo nếu mật khẩu sai
+                showPopup("<h3>Rất tiếc!</h3></br> mật khẩu chưa chính xác vui lòng thử lại!!");
+                document.getElementById("message").innerHTML = "Số cơ hội trả lời còn lại: " + remainingAttempts;
+                if (remainingAttempts === 0) {
+                    document.getElementById("password").disabled = true;
+                    document.getElementById("submitBtn").disabled = true;
+                    document.getElementById("message").innerHTML = "ĐÃ HẾT SỐ LẦN MỞ KHÓA, HÃY F5 TRÌNH DUYỆT ĐỂ CHƠI LẠI TỪ ĐẦU";
+                }
+            }
+        }
+        function showPopup(message) {
+            // Hiển thị overlay
+            document.getElementById("overlay").style.display = "block";
+            // Hiển thị thông báo
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+            popup.innerHTML = message;
+            // Thêm dòng mới trước nút "OK"
+            var lineBreak = document.createElement("br");
+            popup.appendChild(lineBreak);
+            // Thêm nút OK để đóng thông báo
+            var closeButton = document.createElement("button");
+            closeButton.innerHTML = "OK";
+            closeButton.addEventListener("click", function () {
+                // Ẩn overlay và thông báo khi người dùng nhấp OK
+                document.getElementById("overlay").style.display = "none";
+                popup.style.display = "none";
+            });
+            popup.appendChild(closeButton);
+        }
+    </script>
+</head>
+
+<body>
+    <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/logo1.png" alt="logo" class="logo">
+    <div id="wrapper">
+        <h1 class="text-center text-while">TRẠM 5: CỬA HÀNG</h1>
+
+        <div class="underline"></div>
+        <div class="container">
+            <div class="content">
+                <p class="text-left">
+                    <span class="title">Thử thách: Đội trưởng tài ba</span> <br><br>
+                    - Đội chia thành các cặp (2 người), buộc 1 chân vào nhau và bị bịt mắt.<br>
+                    - Mỗi lượt chơi, chỉ đội trưởng được mở mắt để hướng dẫn thành viên bằng lời nói, không được chạm
+                    vào người thành viên. Từng cặp người chơi điều khiển bóng đi zig zag vượt qua các chướng ngại vật,
+                    đến vạch quy định và đá vào gôn của đội mình.<br>
+                    - Đổi cặp chơi đá bóng mới sau mỗi lượt đi.<br>
+                    - Mỗi đội được chơi trong 10 phút, đếm số bóng trúng gôn để tính điểm.
+                </p>
+                <!-- <p class="text-red text-left">Lưu ý: đội tự cử người đi nhặt bóng</p> -->
+            </div>
+            <div class="image">
+                <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/cua-hang.jpg" alt="Game-1">
+            </div>
+        </div>
+
+        <h2>Hãy điền câu trả lời của bạn để qua trạm tiếp theo...</h2>
+        <p id="message"></p>
+        <input class="pass" type="text" id="password" placeholder="Nhập câu trả lời của bạn...">
+        <br><br>
+        <button type="button" id="submitBtn" onclick="checkPassword()">Xác nhận</button>
+        <br><br>
+        <!-- Overlay và thông báo -->
+        <div id="overlay"></div>
+        <div id="popup"></div>
+        <div id="textbox">
+            <!-- <a id="result-link" href="https://games.x2trainghiem.com/cau1-tt/">Tiếp tục hành trình</a> -->
+            <a id="result-link" href="https://games.x2trainghiem.com/cau5-dm/">Tiếp tục hành trình</a>
+            <!-- <a id="result-link" href="https://games.x2trainghiem.com/cau1-hq/">Tiếp tục hành trình</a> -->
+            <!-- <a id="result-link" href="https://games.x2trainghiem.com/cau1-cn/">Tiếp tục hành trình</a> -->
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<!-- /wp:code -->

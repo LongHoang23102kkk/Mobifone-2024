@@ -1,0 +1,224 @@
+<!-- wp:code -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-than-toc.jpg"); */
+            /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-hieu-qua.jpg"); */
+            /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-doi-moi.jpg"); */
+            background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-chuyen-nghiep.jpg");
+            text-align: center;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+
+        }
+
+        #quiz-container {
+            color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+            position: relative;
+            width: 80%;
+            /* Responsive width */
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #000;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            line-height: 25px;
+            background-color: #fff;
+        }
+
+        .answer-letter {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        #popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        #popup {
+            width: 50%;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 8px;
+            z-index: 2;
+        }
+
+        #popup-okay {
+            display: block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+
+
+        h3 {
+            margin: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 16px;
+                padding-bottom: 20%;
+                /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-than-toc-mb.jpg"); */
+                /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-hieu-qua-mb.jpg"); */
+                /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-doi-moi-mb.jpg"); */
+                background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-chuyen-nghiep-mb.jpg");
+            }
+
+            #quiz-container {
+                width: 90%;
+                /* Adjust width for smaller screens */
+            }
+
+            #result-link {
+                display: none;
+                bottom: 20px;
+                right: 20px;
+                padding: 8px 16px;
+                background-color: #4caf50;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            #result-link {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                padding: 8px 16px;
+                background-color: #4caf50;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+                z-index: 3;
+            }
+        }
+    </style>
+    <script>
+        function showPopup(message) {
+            document.getElementById('popup-overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('popup-message').innerHTML = message;
+            document.getElementById('popup-okay').style.display = 'block';
+
+            // Ẩn link khi hiển thị popup
+            document.getElementById('result-link').style.display = 'none';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+
+            // Hiển thị link sau khi đóng popup và chỉ khi trả lời đúng
+            if (document.getElementById('result-link').dataset.display === 'true') {
+                document.getElementById('result-link').style.display = 'block';
+            }
+        }
+
+        function checkAnswer(selectedAnswer) {
+            if (selectedAnswer === "correct") {
+                showPopup("<h3>Xin chúc mừng </h3></br> Khách hàng  đã có trải nghiệm tuyệt vời với câu trả lời của bạn.");
+                // Đặt thuộc tính để hiển thị link sau khi đóng popup
+                document.getElementById('result-link').dataset.display = 'true';
+            } else {
+                showPopup("<h3>Rất tiếc!</h3></br> Khách hàng chưa hài lòng với câu trả lời này của bạn </br>Hãy chuyển đổi giải pháp nhé!!");
+                // Đặt thuộc tính để không hiển thị link sau khi đóng popup
+                document.getElementById('result-link').dataset.display = 'false';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="popup-overlay"></div>
+
+    <div id="quiz-container">
+        <h1>A Thắng 23 tuổi muốn mua sim Saymee sử dụng bạn hãy tư vấn?</h1>
+        <ul>
+            <li><button onclick="checkAnswer('wrong1')"><span class="answer-letter">A.</span> Không mua được vì không
+                    đúng độ tuổi từ 12-22 tuổi
+                </button></li>
+            <li><button onclick="checkAnswer('wrong3')"><span class="answer-letter">B.</span> Mua tại CH hoặc các điểm
+                    bán lưu động của MobiFone
+                </button></li>
+            <li><button onclick="checkAnswer('correct')"><span class="answer-letter">C.</span> Mua online trên app/web
+                    saymee kèm gói cước và ra CH nhận sim kích hoạt
+                </button></li>
+        </ul>
+        <!-- <a id="result-link" href="https://games.x2trainghiem.com/game5-tt/">Tiếp tục hành trình</a> -->
+        <!-- <a id="result-link" href="https://games.x2trainghiem.com/game2-hq/">Tiếp tục hành trình</a> -->
+        <!-- <a id="result-link" href="https://games.x2trainghiem.com/game2-dm/">Tiếp tục hành trình</a> -->
+        <a id="result-link" href="https://games.x2trainghiem.com/game3-cn/">Tiếp tục hành trình</a>
+    </div>
+
+    <div id="popup">
+        <p id="popup-message"></p>
+        <div id="popup-okay" onclick="closePopup()">OK</div>
+    </div>
+</body>
+
+</html>
+<!-- /wp:code -->

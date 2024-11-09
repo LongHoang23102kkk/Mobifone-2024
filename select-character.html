@@ -1,3 +1,5 @@
+<!-- wp:code -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,20 +7,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        * {
+            box-sizing: content-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             text-align: center;
-            background-image: url("https://i.postimg.cc/4yRXzpjS/BACK-GAME-16-9-DONG-NAI.jpg");
+            background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-main.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+
         }
+
+        /* .container {
+            width: 1080px;
+            margin: 0 auto;
+        } */
 
         .logo {
             margin-top: 20px;
             padding: 20px;
+        }
+
+        .comments-area a,
+        .page-content a {
+            text-decoration: none;
+            min-height: 200px;
         }
 
         .logo img {
@@ -122,7 +140,7 @@
             }
 
             .logo {
-                margin-top: 50px;
+                margin: 0 auto;
             }
 
             .logo img {
@@ -189,6 +207,9 @@
                 margin-bottom: 5%;
             }
 
+            .character-text {
+                font-size: 14px;
+            }
 
             .character img {
                 max-width: 100%;
@@ -215,42 +236,52 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="logo">
+            <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/logo1.png" alt="Logo">
+        </div>
 
-    <div class="logo">
-        <img src="asset/img/logo.png" alt="Logo">
-    </div>
+        <div class="program-images">
+            <img class="desktop" src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/text-ngang.png"
+                alt="Desktop Image">
+            <img class="mobile" src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/text-ngang.png"
+                alt="Mobile Image">
+        </div>
 
-    <div class="program-images">
-        <img class="desktop" src="asset/img/text-GAME-2.png" alt="Desktop Image">
-        <img class="mobile" src="asset/img/text-mobile.png" alt="Mobile Image">
-    </div>
+        <div class="introduction-text">
+            <p>Hãy lựa chọn nhân vật đại diện cho nhà
+                của mình và cũng chúng tôi bước vào cuộc
+                phiêu lưu X2 trải nghiệm này nhé</p>
+        </div>
 
-    <div class="introduction-text">
-        <p>Hãy lựa chọn nhân vật đại diện cho đội của mình và cùng chúng tôi bước vào cuộc phiêu lưu này nhé!</p>
-    </div>
+        <div class="character-container">
+            <a href="https://games.x2trainghiem.com/than-toc/" class="character">
+                <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/than-toc.png" alt="THẦN TỐC"
+                    target="_self">
+                <div class="character-text text-bold">THẦN TỐC</div>
+            </a>
 
-    <div class="character-container">
-        <a href="than-toc/than-toc.html" class="character">
-            <img src="asset/img/THAN-TOC.png" alt="THẦN TỐC" target="_self">
-            <div class="character-text text-bold">THẦN TỐC</div>
-        </a>
+            <a href="https://games.x2trainghiem.com/hieu-qua/" class="character">
+                <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/hieu-qua.png" alt="HIỆU QUẢ"
+                    target="_self">
+                <div class="character-text text-bold">HIỆU QUẢ</div>
+            </a>
 
-        <a href="https://game.nangtamtrainghiem.com/hieu-qua" class="character">
-            <img src="asset/img/HIEU-QUA.png" alt="HIỆU QUẢ" target="_self">
-            <div class="character-text text-bold">HIỆU QUẢ</div>
-        </a>
+            <a href="https://games.x2trainghiem.com/doi-moi" class="character">
+                <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/doi-moi.png" alt="ĐỔI MỚI"
+                    target="_self">
+                <div class="character-text text-bold">ĐỔI MỚI</div>
+            </a>
 
-        <a href="https://game.nangtamtrainghiem.com/doi-moi" class="character">
-            <img src="asset/img/DOI-MOI.png" alt="ĐỔI MỚI" target="_self">
-            <div class="character-text text-bold">ĐỔI MỚI</div>
-        </a>
-
-        <a href="https://game.nangtamtrainghiem.com/chuyen-nghiep" class="character">
-            <img src="asset/img/CHUYEN-NGHIEP.png" alt="CHUYÊN NGHIỆP" target="_self">
-            <div class="character-text text-bold">CHUYÊN NGHIỆP</div>
-        </a>
+            <a href="https://games.x2trainghiem.com/chuyen-nghiep" class="character">
+                <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/chuyen-nghiep.png"
+                    alt="CHUYÊN NGHIỆP" target="_self">
+                <div class="character-text text-bold">CHUYÊN NGHIỆP</div>
+            </a>
+        </div>
     </div>
 
 </body>
 
 </html>
+<!-- /wp:code -->

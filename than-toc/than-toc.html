@@ -1,3 +1,4 @@
+<!-- wp:code -->
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +6,11 @@
     <style>
         body {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            background-image: url("https://i.postimg.cc/4yRXzpjS/BACK-GAME-16-9-DONG-NAI.jpg");
+            background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-than-toc.jpg");
+            /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-hieu-qua.jpg"); */
+            /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-doi-moi.jpg"); */
+            /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-chuyen-nghiep.jpg"); */
+
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
@@ -17,14 +22,17 @@
         h1 {
             margin: 0;
             margin-bottom: 20px;
+            font-weight: bold;
         }
 
         h2 {
             color: #ededed;
+            font-weight: bold;
         }
 
         h3 {
             margin: 0;
+            font-weight: bold;
         }
 
         button {
@@ -46,7 +54,7 @@
         }
 
         .content {
-            margin-top: 15%;
+            margin-top: 5%;
             padding: 0 30px;
         }
 
@@ -67,6 +75,7 @@
         #password {
             padding: 10px 20px;
             font-size: 21px;
+            border-radius: 4px;
         }
 
         #submitBtn {
@@ -74,6 +83,9 @@
             font-size: 21px;
             color: #0056b3;
             cursor: pointer;
+            border-radius: 30px;
+            background: yellow;
+            font-weight: bold;
         }
 
         #textbox {
@@ -85,13 +97,13 @@
             color: #333;
         }
 
-        #textbox a {
+        /* #textbox a {
             color: yellow;
             position: absolute;
             right: 20px;
             margin-bottom: 30px;
             font-weight: bold;
-        }
+        } */
 
         #overlay {
             display: none;
@@ -172,18 +184,32 @@
         .next {
             padding-bottom: 30px;
         }
+
+        #result-link {
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 3px;
+        }
     </style>
     <style>
         @media (max-width: 768px) {
             body {
+                min-height: 600px;
                 font-size: 18px;
                 padding: 0px 30px;
+                background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-than-toc-mb.jpg");
+                /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-hieu-qua-mb.jpg"); */
+                /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-doi-moi-mb.jpg"); */
+                /* background-image: url("http://games.x2trainghiem.com/wp-content/uploads/2024/11/bg-chuyen-nghiep-mb.jpg"); */
             }
 
             img {
                 max-width: 100%;
                 height: auto;
-                margin-left: 5px;
+                margin-left: 40px;
             }
 
             h1 {
@@ -232,7 +258,7 @@
                 font-size: 18px;
                 color: #0056b3;
                 border-radius: 30px;
-                margin-left: 20%;
+                margin-left: 30%;
             }
 
             .pass {
@@ -244,8 +270,8 @@
                 font-size: 16px;
             }
 
-            #textbox a {
-                color: white;
+            #result-link {
+                display: block;
             }
         }
     </style>
@@ -257,7 +283,7 @@
 
             if (passwords.includes(password)) {
                 // Hiển thị thông báo nếu mật khẩu đúng
-                showPopup("<h3>Mật khẩu chính xác!!</h3></br> Xin mời bạn đến trạm CỬA HÀNG.");
+                showPopup("<h3>Mật khẩu chính xác!!</h3></br> Xin mời bạn ấn nút 'tiếp tục hành trình' để đi tiếp");
                 document.getElementById("message").innerHTML = "";
                 document.getElementById("textbox").style.display = "block";
             } else {
@@ -299,13 +325,18 @@
     <div id="wrapper">
         <div class="container">
             <div class="image">
-                <img src="/asset/img/THAN-TOC.png" alt="">
+                <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/than-toc.png" alt="">
+                <!-- <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/hieu-qua.png" alt=""> -->
+                <!-- <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/doi-moi.png" alt=""> -->
+                <!-- <img src="http://games.x2trainghiem.com/wp-content/uploads/2024/11/chuyen-nghiep.png" alt=""> -->
+
             </div>
             <div class="content">
-                <p class="text-left">Bạn là biểu tượng của tốc độ và sự linh hoạt, bạn là người cung cấp dịch vụ nhanh
-                    chóng và hiệu quả, đáp ứng ngay lập tức các nhu cầu của khách hàng.
+                <p class="text-left">Nhà thần tốc sẽ đại diện cho tốc độ và sự linh hoạt, các
+                    anh tài cung cấp dịch vụ nhanh chóng và hiệu quả, đáp
+                    ứng ngay lập tức các nhu cầu của khách hàng.
                 </p>
-                <h2>Nhập mật khẩu để bắt đầu hành trình...</h2>
+                <h2>Nhập mật khẩu để bắt đầu cuộc phiêu lưu...</h2>
                 <p id="message"></p>
                 <input class="pass" type="text" id="password" placeholder="Nhập câu trả lời của bạn...">
                 <br><br>
@@ -315,8 +346,7 @@
                 <div id="overlay"></div>
                 <div id="popup"></div>
                 <div id="textbox">
-                    <p class="next"><a href="game-1-tt.html">Tiếp tục hành trình
-                            &#10140</a></p>
+                    <a id="result-link" href="https://games.x2trainghiem.com/game1-tt/">Tiếp tục hành trình</a>
                 </div>
             </div>
 
@@ -327,3 +357,4 @@
 </body>
 
 </html>
+<!-- /wp:code -->
